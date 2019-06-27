@@ -45,7 +45,7 @@ public class EventsDao {
 							res.getInt("is_traffic")));
 				} catch (Throwable t) {
 					t.printStackTrace();
-					System.out.println(res.getInt("id"));
+					
 				}
 			}
 			
@@ -94,8 +94,9 @@ public class EventsDao {
 			ResultSet res = st.executeQuery() ;
 			
 			if(res.next()) {
+				double result=res.getDouble("media");
 				conn.close();
-				return res.getDouble("media");
+				return result;
 			}
 			
 			conn.close();
@@ -121,8 +122,9 @@ public class EventsDao {
 			ResultSet res = st.executeQuery() ;
 			
 			if(res.next()) {
+				double result=res.getDouble("media");
 				conn.close();
-				return res.getDouble("media");
+				return result;
 			}
 			
 			conn.close();
@@ -170,8 +172,9 @@ public class EventsDao {
 			ResultSet res = st.executeQuery() ;
 
 			if(res.next()) {
+				int result=res.getInt("district_id");
 				conn.close();
-				return res.getInt("district_id");
+				return result;
 			}
 			conn.close();
 			return null;
